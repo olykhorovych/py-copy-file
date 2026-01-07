@@ -1,7 +1,8 @@
 def copy_file(command: str) -> None:
-    if len(command.split(" ")) < 3:
+    full_command = command.split(" ")
+    if not len(full_command) == 3:
         return
-    command, filename_to_copy, filename_target = command.split(" ")
+    command, filename_to_copy, filename_target = full_command
     if command != "cp":
         return
     if filename_to_copy == filename_target:
